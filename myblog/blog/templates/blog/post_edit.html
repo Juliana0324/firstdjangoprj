@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>New post</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <!-- 양식을 담은 변수이름이 form이므로 form.as_p
+        	다른 이름이라면 양식명.as_p라고 적는다-->
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
